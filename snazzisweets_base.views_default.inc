@@ -13,7 +13,7 @@ function snazzisweets_base_views_default_views() {
   $view = new view();
   $view->name = 'cookie_jar_banner';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'snazzisweets';
   $view->base_table = 'node';
   $view->human_name = 'Cookie Jar Banner';
   $view->core = 7;
@@ -183,9 +183,9 @@ function snazzisweets_base_views_default_views() {
   $view = new view();
   $view->name = 'homepage';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'snazzisweets';
   $view->base_table = 'node';
-  $view->human_name = 'Homepage';
+  $view->human_name = 'Homepage Carousel';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -203,8 +203,9 @@ function snazzisweets_base_views_default_views() {
   $handler->display->display_options['style_options']['interval'] = '3000';
   $handler->display->display_options['style_options']['navigation'] = 0;
   $handler->display->display_options['style_options']['indicators'] = 0;
-  $handler->display->display_options['style_options']['pause'] = 1;
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['style_options']['pause'] = 0;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
   /* Field: Content: Photo */
   $handler->display->display_options['fields']['field_snazzi_photo']['id'] = 'field_snazzi_photo';
   $handler->display->display_options['fields']['field_snazzi_photo']['table'] = 'field_data_field_snazzi_photo';
@@ -237,18 +238,14 @@ function snazzisweets_base_views_default_views() {
     'snazzi_cupcake' => 'snazzi_cupcake',
   );
 
-  /* Display: Homepage */
-  $handler = $view->new_display('page', 'Homepage', 'page_1');
-  $handler->display->display_options['path'] = 'home';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  /* Display: Homepage Block */
+  $handler = $view->new_display('block', 'Homepage Block', 'snazzi_homepage');
   $export['homepage'] = $view;
 
   $view = new view();
   $view->name = 'snazzi_cake_carousel';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'snazzisweets';
   $view->base_table = 'node';
   $view->human_name = 'Cake Carousel';
   $view->core = 7;
@@ -313,7 +310,7 @@ function snazzisweets_base_views_default_views() {
   $view = new view();
   $view->name = 'snazzi_cupcake_carousel';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'snazzisweets';
   $view->base_table = 'node';
   $view->human_name = 'Cupcake Carousel';
   $view->core = 7;
