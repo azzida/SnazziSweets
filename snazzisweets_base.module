@@ -1,10 +1,12 @@
 <?php
 /**
  * @file
- * The primary PHP file for this module.
+ * Code for the SnazziSweets Base feature.
  */
- 
-function snazzisweets_preprocess_node(&$variables) {
+
+include_once 'snazzisweets_base.features.inc';
+
+function snazzisweets_base_preprocess_node(&$variables) {
   
   if ($variables['type'] == 'snazzi_cookie' && $variables['view_mode'] == 'teaser'){
     //React to the Cookie Jar
