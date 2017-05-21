@@ -1,9 +1,11 @@
 <?php
 /**
  * @file
- * The primary PHP file for this module.
+ * Code for the SnazziSweets Base feature.
  */
- 
+
+include_once 'snazzisweets_base.features.inc';
+
 function snazzisweets_preprocess_node(&$variables) {
   
   if ($variables['type'] == 'snazzi_cookie' && $variables['view_mode'] == 'teaser'){
