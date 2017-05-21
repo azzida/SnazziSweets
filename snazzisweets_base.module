@@ -6,7 +6,7 @@
 
 include_once 'snazzisweets_base.features.inc';
 
-function snazzisweets_preprocess_node(&$variables) {
+function snazzisweets_base_preprocess_node(&$variables) {
   
   if ($variables['type'] == 'snazzi_cookie' && $variables['view_mode'] == 'teaser'){
     //React to the Cookie Jar
