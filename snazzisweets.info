@@ -1,0 +1,10 @@
+name = SnazziSweets Base
+description = Base content types and structure for SnazziSweets.
+package = SnazziSweets
+core = 7.x
+version = "7.x-1.0"
+files[] = snazzisweets.module
+
+
+
+
