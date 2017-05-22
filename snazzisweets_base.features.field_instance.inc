@@ -131,7 +131,7 @@ function snazzisweets_base_field_default_field_instances() {
     'label' => 'Price',
     'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -251,7 +251,7 @@ function snazzisweets_base_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'snazzi_cookie_jar_banner_item',
+          'image_style' => 'snazzi_fancybox_banner_item',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -387,13 +387,14 @@ function snazzisweets_base_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 1,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
