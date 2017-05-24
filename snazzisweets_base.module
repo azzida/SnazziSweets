@@ -6,6 +6,47 @@
 
 include_once 'snazzisweets_base.features.inc';
 
+/**
+ * Implements hook_block_info().
+ */
+function snazzisweets_base_block_info() {
+  $blocks = array();
+  $blocks['snazzi_contact'] = array(
+    'info' => t('Snazzi Contact Information'),
+  );
+  
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function snazzisweets_base_block_view($delta='') {
+  $block = array();
+  
+  switch($delta) {
+    case 'snazzi_contact' :
+		$block['subject'] = t('Email'); 
+		$block['content'] = '<div class="snazzi-email-link"><a href="mailto:orders@snazzisweets.ca">orders@snazzisweets</a></div>'; 
+		break;
+  }
+  
+  return $block;
+}
+
+function snazzisweets_base_preprocess_page(&$vars) {
+	$snazzi_cart = menu_navigation_links('menu-snazzi-navbar');
+	$vars['snazzi_cart'] = theme('links__menu_snazzi_navbar', array(
+			'links' => $snazzi_cart,
+			'attributes' => array(
+				'id' => 'snazzi-cart',
+				'class' => array('links', 'clearfix', 'snazzi-cart', 'nav', 'navbar-nav'),
+			),
+		)
+	);
+}
+
+
 function snazzisweets_base_preprocess_node(&$variables) {
   
   if ($variables['type'] == 'snazzi_cookie' && $variables['view_mode'] == 'snazzi_ubercart_cart_view'){
