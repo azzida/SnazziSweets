@@ -8,16 +8,13 @@ include_once 'snazzisweets_base.features.inc';
 
 function snazzisweets_base_preprocess_node(&$variables) {
   
-  if ($variables['type'] == 'snazzi_cookie' && $variables['view_mode'] == 'teaser'){
+  if ($variables['type'] == 'snazzi_cookie' && $variables['view_mode'] == 'snazzi_ubercart_cart_view'){
     //React to the Cookie Jar
     
-    //Set the linked path to the page URL, with nid appended
-    $variables['content']['field_snazzi_photo'][0]['#path']['path'] = 'cookies/'.$variables['nid'];
-        
     //If the title is visible, hide it
-    if(isset($variables['title'])){
-      $variables['title'] = FALSE;
-    }
+//    if(isset($variables['title'])){
+  //    $variables['title'] = FALSE;
+    //}
   }      
   else if ($variables['type'] == 'snazzi_cake' && $variables['view_mode'] == 'teaser'){
     //React to the Cake Carousel
@@ -40,6 +37,20 @@ function snazzisweets_base_preprocess_node(&$variables) {
   }
 }
 
+
+function snazzisweets_base_preprocess_field(&$variables, $hook) {
+  if ($variables['element']['#bundle'] == 'snazzi_cookie' &&
+    $variables['element']['#view_mode'] == 'snazzi_ubercart_cart_view'){
+    //React to Cookie Cart Contents
+    if ($variables['element']['#field_name'] == 'body'){
+      $variables['classes_array'][] = 'col-xs-6';
+    } 
+    else if ($variables['element']['#field_name'] == 'uc_product_image'){
+      $variables['classes_array'][] = 'col-xs-3';
+    }
+  }
+  
+}
 /*function snazzisweets_base_form_alter(&$form, &$form_state, $form_id){
 	if (strpos($form_id, "uc_product_add_to_cart_form") === 0) {
 		$qty_per_package = array(0 => t('6 per package'), 1 => t('12 per package'));
