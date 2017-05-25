@@ -11,6 +11,9 @@ function snazzisweets_base_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
+  if ($module == "slick" && $api == "slick_default_preset") {
+    return array("version" => "1");
+  }
 }
 
 /**
@@ -30,7 +33,7 @@ function snazzisweets_base_fontyourface_features_default_font() {
       'enabled' => 1,
       'url' => 'http://www.google.com/webfonts/family?family=Marcellus SC&subset=latin#regular',
       'provider' => 'google_fonts_api',
-      'css_selector' => 'p, div',
+      'css_selector' => 'header, footer, .container',
       'css_family' => 'Marcellus SC',
       'css_style' => 'normal',
       'css_weight' => 'normal',
@@ -100,36 +103,51 @@ function snazzisweets_base_image_default_styles() {
     ),
   );
 
+  // Exported image style: snazzi_slick_small.
+  $styles['snazzi_slick_small'] = array(
+    'label' => 'Slick Small Image',
+    'effects' => array(
+      20 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 300,
+          'height' => 300,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
 
 /**
- * Implements hook_node_info().
+ * Implements hook_uc_product_default_classes().
  */
-function snazzisweets_base_node_info() {
+function snazzisweets_base_uc_product_default_classes() {
   $items = array(
     'snazzi_cake' => array(
       'name' => t('Cake'),
-      'base' => 'node_content',
-      'description' => t('A fancy layered cake!'),
+      'base' => 'uc_product',
+      'description' => t('Cake product.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Name'),
       'help' => '',
     ),
     'snazzi_cookie' => array(
       'name' => t('Cookie'),
-      'base' => 'node_content',
-      'description' => t('A delicious cookie!'),
+      'base' => 'uc_product',
+      'description' => t('Cookies for the cookie jar.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Name'),
       'help' => '',
     ),
     'snazzi_cupcake' => array(
       'name' => t('Cupcake'),
-      'base' => 'node_content',
-      'description' => t('A gourmet muffin!'),
+      'base' => 'uc_product',
+      'description' => t('A gourmet cupcake.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Name'),
       'help' => '',
     ),
   );
