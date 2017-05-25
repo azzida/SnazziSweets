@@ -47,7 +47,7 @@ function snazzisweets_base_preprocess_page(&$vars) {
 }
 
 
-function snazzisweets_base_preprocess_node(&$variables) {
+/*function snazzisweets_base_preprocess_node(&$variables) {
   
   if ($variables['type'] == 'snazzi_cookie' && $variables['view_mode'] == 'snazzi_ubercart_cart_view'){
     //React to the Cookie Jar
@@ -76,10 +76,10 @@ function snazzisweets_base_preprocess_node(&$variables) {
       $variables['title'] = FALSE;
     }
   }
-}
+}*/
 
 
-function snazzisweets_base_preprocess_field(&$variables, $hook) {
+/*function snazzisweets_base_preprocess_field(&$variables, $hook) {
   if ($variables['element']['#bundle'] == 'snazzi_cookie' &&
     $variables['element']['#view_mode'] == 'snazzi_ubercart_cart_view'){
     //React to Cookie Cart Contents
@@ -91,7 +91,7 @@ function snazzisweets_base_preprocess_field(&$variables, $hook) {
     }
   }
   
-}
+}*/
 /*function snazzisweets_base_form_alter(&$form, &$form_state, $form_id){
 	if (strpos($form_id, "uc_product_add_to_cart_form") === 0) {
 		$qty_per_package = array(0 => t('6 per package'), 1 => t('12 per package'));
