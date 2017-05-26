@@ -514,9 +514,12 @@ function snazzisweets_base_field_default_field_instances() {
       ),
       'snazzi_ubercart_cart_view' => array(
         'label' => 'hidden',
-        'module' => 'uc_product',
-        'settings' => array(),
-        'type' => 'uc_product_image',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'thumbnail',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
       'teaser' => array(
