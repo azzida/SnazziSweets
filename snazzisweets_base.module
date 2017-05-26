@@ -32,7 +32,7 @@ function snazzisweets_base_block_view($delta='') {
     <div class="snazzi-email-contents"><a href="mailto:orders@snazzisweets.ca">orders@snazzisweets</a></div>
     <div class="snazzi-phone-title">Phone</div>
     <div class="snazzi-phone-contents"><a href="tel:6138988545">613-898-8545</a></div>
-    <div class="snazzi-location-contents">Serving the Ottawa area, between Orleans to Kanata</div>
+    <div class="snazzi-location-contents">Serving the Ottawa area, from Orleans to Kanata</div>
     </div>'; 
 		break;
   }
