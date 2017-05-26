@@ -46,6 +46,26 @@ function snazzisweets_base_preprocess_page(&$vars) {
 	);
 }
 
+/**
+ * Implements hook_entity_info_alter().
+ */
+function snazzisweets_base_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['snazzi_ubercart_cart_view'] = array(
+    'label' => t('Snazzi Ubercart View'),
+    'custom settings' => TRUE,
+  );
+}
+
+function snazzisweets_base_preprocess_node(&$vars) {
+  if (($vars['node']->type == 'snazzi_cookie' || $vars['node']->type == 'snazzi_cupcake') 
+      && $vars['view_mode'] == 'snazzi_ubercart_cart_view') {
+    $vars['theme_hook_suggestions'][] = 'node__snazzi_ubercart_cart_view';
+  }
+}
+
+function snazzisweets_base_form_uc_cart_checkout_form_alter(&$form, &$form_state) {
+  unset($form['panes']['billing']['select_address']);
+}
 
 /*function snazzisweets_base_preprocess_node(&$variables) {
   
