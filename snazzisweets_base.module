@@ -27,13 +27,31 @@ function snazzisweets_base_block_view($delta='') {
   switch($delta) {
     case 'snazzi_contact' :
 		$block['subject'] = t('Contact Information'); 
-		$block['content'] = '<div class="snazzi-contactus-block">
-    <div class="snazzi-email-title">Email</div>
-    <div class="snazzi-email-contents"><a href="mailto:orders@snazzisweets.ca">orders@snazzisweets</a></div>
-    <div class="snazzi-phone-title">Phone</div>
-    <div class="snazzi-phone-contents"><a href="tel:6138988545">613-898-8545</a></div>
-    <div class="snazzi-location-contents">Serving the Ottawa area, from Orleans to Kanata</div>
-    </div>'; 
+		$block['content'] = 
+		'<div class="snazzi-contactus-block hidden-xs">
+			<div class="snazzi-email-title">Email</div>
+			<div class="snazzi-email-contents"><a class="href="mailto:orders@snazzisweets.ca">orders@snazzisweets</a></div>
+			<div class="snazzi-phone-title">Phone</div>
+			<div class="snazzi-phone-contents"><a href="tel:6138988545">613-898-8545</a></div>
+			<div class="snazzi-location-contents">Serving the Ottawa area, from Orleans to Kanata</div>
+		</div>
+		<button class="visible-xs btn btn-default btn-xs" data-toggle="collapse" data-target="#email-menu">Email</button>
+		<div id="email-menu" class="collapse">
+			<a href="mailto:orders@snazzisweets.ca">orders@snazzisweets</a>
+		</div>
+		<button class="visible-xs btn btn-default btn-xs" data-toggle="collapse" data-target="#phone-menu">Phone/SMS</button>
+		<div id="phone-menu" class="collapse">
+			<a href="tel:6138988545">613-898-8545</a>
+		</div>
+		<button class="visible-xs btn btn-default btn-xs" data-toggle="collapse" data-target="#location-menu">Service Area</button>
+		<div id="location-menu" class="collapse">
+			Serving the Ottawa area, from Orleans to Kanata
+		</div>'; 
+	
+
+
+
+
 		break;
   }
   
