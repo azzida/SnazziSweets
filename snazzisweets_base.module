@@ -35,16 +35,16 @@ function snazzisweets_base_block_view($delta='') {
 			<div class="snazzi-phone-contents"><a href="tel:6138988545">613-898-8545</a></div>
 			<div class="snazzi-location-contents">Serving the Ottawa area, from Orleans to Kanata</div>
 		</div>
-		<button class="visible-xs btn btn-default btn-xs" data-toggle="collapse" data-target="#email-menu">Email</button>
-		<div id="email-menu" class="collapse">
+		<button class="visible-xs btn btn-block btn-xs" data-toggle="collapse" data-target="#email-menu">Email</button>
+		<div id="email-menu" class="text-center collapse">
 			<a href="mailto:orders@snazzisweets.ca">orders@snazzisweets</a>
 		</div>
-		<button class="visible-xs btn btn-default btn-xs" data-toggle="collapse" data-target="#phone-menu">Phone/SMS</button>
-		<div id="phone-menu" class="collapse">
+		<button class="visible-xs btn btn-block btn-xs" data-toggle="collapse" data-target="#phone-menu">Phone/SMS</button>
+		<div id="phone-menu" class="text-center collapse">
 			<a href="tel:6138988545">613-898-8545</a>
 		</div>
-		<button class="visible-xs btn btn-default btn-xs" data-toggle="collapse" data-target="#location-menu">Service Area</button>
-		<div id="location-menu" class="collapse">
+		<button class="visible-xs btn btn-block btn-xs" data-toggle="collapse" data-target="#location-menu">Service Area</button>
+		<div id="location-menu" class="text-center collapse">
 			Serving the Ottawa area, from Orleans to Kanata
 		</div>'; 
 	
