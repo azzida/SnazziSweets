@@ -60,6 +60,7 @@ function snazzisweets_base_views_default_views() {
 
   /* Display: Cookie Jar Fancybox Banner */
   $handler = $view->new_display('block', 'Cookie Jar Fancybox Banner', 'cookie_jar_fancybox');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Banner that is first visible on the /cookies page';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -119,6 +120,7 @@ function snazzisweets_base_views_default_views() {
 
   /* Display: Cookie Jar Cart Contents */
   $handler = $view->new_display('block', 'Cookie Jar Cart Contents', 'cookie_jar_cart_contents');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['display_description'] = 'Contents for each cookie when views';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -222,6 +224,99 @@ function snazzisweets_base_views_default_views() {
 	</div>
 
 	</div>
+</div>';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Weight (field_snazzi_weight) */
+  $handler->display->display_options['sorts']['field_snazzi_weight_value']['id'] = 'field_snazzi_weight_value';
+  $handler->display->display_options['sorts']['field_snazzi_weight_value']['table'] = 'field_data_field_snazzi_weight';
+  $handler->display->display_options['sorts']['field_snazzi_weight_value']['field'] = 'field_snazzi_weight_value';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'snazzi_cookie' => 'snazzi_cookie',
+  );
+
+  /* Display: CookieJar 2.0 */
+  $handler = $view->new_display('block', 'CookieJar 2.0', 'cookie_jar_collapse');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['display_description'] = 'Banner that is first visible on the /cookies page';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'row panel-group panel';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'title' => 'title',
+    'display_price' => 'display_price',
+    'body' => 'body',
+  );
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Product: Display price */
+  $handler->display->display_options['fields']['display_price']['id'] = 'display_price';
+  $handler->display->display_options['fields']['display_price']['table'] = 'uc_products';
+  $handler->display->display_options['fields']['display_price']['field'] = 'display_price';
+  $handler->display->display_options['fields']['display_price']['label'] = '';
+  $handler->display->display_options['fields']['display_price']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['display_price']['element_label_colon'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['uc_product_image']['id'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['table'] = 'field_data_uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['field'] = 'uc_product_image';
+  $handler->display->display_options['fields']['uc_product_image']['label'] = '';
+  $handler->display->display_options['fields']['uc_product_image']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['uc_product_image']['alter']['text'] = '<div class="panel-heading col-xs-3">
+<a class="btn" data-toggle="collapse" data-parent="#accordion" href="#data-[nid]">[uc_product_image]</a>
+</div>';
+  $handler->display->display_options['fields']['uc_product_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uc_product_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['uc_product_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['uc_product_image']['settings'] = array(
+    'image_style' => 'snazzi_fancybox_banner_item',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['uc_product_image']['delta_offset'] = '0';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['text'] = '<div id="data-[nid]" class="panel-collapse collapse col-xs-9">
+<div class="panel-body">
+[title] - [body] - [display_price]
+</div>
 </div>';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
