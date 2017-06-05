@@ -88,6 +88,21 @@ function snazzisweets_base_image_default_styles() {
     ),
   );
 
+  // Exported image style: snazzi_fancybox_expanded.
+  $styles['snazzi_fancybox_expanded'] = array(
+    'label' => 'Fancybox Expanded',
+    'effects' => array(
+      19 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 640,
+          'height' => 480,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: snazzi_homepage_banner_image.
   $styles['snazzi_homepage_banner_image'] = array(
     'label' => 'Homepage Banner Image',
