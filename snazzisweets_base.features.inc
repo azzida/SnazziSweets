@@ -143,7 +143,7 @@ function snazzisweets_base_node_info() {
   $items = array(
     'snazzi_cake' => array(
       'name' => t('Cake'),
-      'base' => 'snazzisweets_base',
+      'base' => 'node_content',
       'description' => t('Cake product.'),
       'has_title' => '1',
       'title_label' => t('Name'),
@@ -151,7 +151,7 @@ function snazzisweets_base_node_info() {
     ),
     'snazzi_cookie' => array(
       'name' => t('Cookie'),
-      'base' => 'snazzisweets_base',
+      'base' => 'node_content',
       'description' => t('Cookies for the cookie jar.'),
       'has_title' => '1',
       'title_label' => t('Name'),
@@ -159,7 +159,7 @@ function snazzisweets_base_node_info() {
     ),
     'snazzi_cupcake' => array(
       'name' => t('Cupcake'),
-      'base' => 'snazzisweets_base',
+      'base' => 'node_content',
       'description' => t('A gourmet cupcake.'),
       'has_title' => '1',
       'title_label' => t('Name'),
