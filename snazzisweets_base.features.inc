@@ -137,9 +137,9 @@ function snazzisweets_base_image_default_styles() {
 }
 
 /**
- * Implements hook_uc_product_default_classes().
+ * Implements hook_node_info().
  */
-function snazzisweets_base_uc_product_default_classes() {
+function snazzisweets_base_node_info() {
   $items = array(
     'snazzi_cake' => array(
       'name' => t('Cake'),
