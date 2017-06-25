@@ -239,36 +239,29 @@ function snazzisweets_base_views_default_views() {
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Product: Display price */
-  $handler->display->display_options['fields']['display_price']['id'] = 'display_price';
-  $handler->display->display_options['fields']['display_price']['table'] = 'uc_products';
-  $handler->display->display_options['fields']['display_price']['field'] = 'display_price';
-  $handler->display->display_options['fields']['display_price']['label'] = '';
-  $handler->display->display_options['fields']['display_price']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['display_price']['element_label_colon'] = FALSE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['uc_product_image']['id'] = 'uc_product_image';
-  $handler->display->display_options['fields']['uc_product_image']['table'] = 'field_data_uc_product_image';
-  $handler->display->display_options['fields']['uc_product_image']['field'] = 'uc_product_image';
-  $handler->display->display_options['fields']['uc_product_image']['label'] = '';
-  $handler->display->display_options['fields']['uc_product_image']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['uc_product_image']['alter']['text'] = '<div class="col-xs-3">
-[uc_product_image]
+  /* Field: Content: Price */
+  $handler->display->display_options['fields']['field_snazzi_price']['id'] = 'field_snazzi_price';
+  $handler->display->display_options['fields']['field_snazzi_price']['table'] = 'field_data_field_snazzi_price';
+  $handler->display->display_options['fields']['field_snazzi_price']['field'] = 'field_snazzi_price';
+  $handler->display->display_options['fields']['field_snazzi_price']['label'] = '';
+  $handler->display->display_options['fields']['field_snazzi_price']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_snazzi_price']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_snazzi_price']['delta_offset'] = '0';
+  /* Field: Content: Photo */
+  $handler->display->display_options['fields']['field_snazzi_photo']['id'] = 'field_snazzi_photo';
+  $handler->display->display_options['fields']['field_snazzi_photo']['table'] = 'field_data_field_snazzi_photo';
+  $handler->display->display_options['fields']['field_snazzi_photo']['field'] = 'field_snazzi_photo';
+  $handler->display->display_options['fields']['field_snazzi_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_snazzi_photo']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_snazzi_photo']['alter']['text'] = '<div class="col-xs-3">
+[field_snazzi_photo]
 </div>';
-  $handler->display->display_options['fields']['uc_product_image']['element_class'] = 'img-responsive';
-  $handler->display->display_options['fields']['uc_product_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['uc_product_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['uc_product_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['uc_product_image']['type'] = 'fancybox';
-  $handler->display->display_options['fields']['uc_product_image']['settings'] = array(
-    'fancybox_image_style_content' => 'snazzi_fancybox_banner_item',
-    'fancybox_image_style_fancybox' => 'snazzi_fancybox_expanded',
-    'fancybox_gallery' => 'none',
-    'fancybox_gallery_custom' => '',
-    'fancybox_caption' => 'none',
-    'fancybox_caption_custom' => '',
+  $handler->display->display_options['fields']['field_snazzi_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_snazzi_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_snazzi_photo']['settings'] = array(
+    'image_style' => 'snazzi_fancybox_banner_item',
+    'image_link' => '',
   );
-  $handler->display->display_options['fields']['uc_product_image']['delta_offset'] = '0';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -276,7 +269,7 @@ function snazzisweets_base_views_default_views() {
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['text'] = '<div id="data-[nid]" class="col-xs-9">
-<div class="snazzi-title">[title]</div><div class="snazzi-price">[display_price]</div>
+<div class="snazzi-title">[title]</div><div class="snazzi-price">[field_snazzi_price]</div>
 <div class="snazzi-body">[body]</div>
 </div>';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
