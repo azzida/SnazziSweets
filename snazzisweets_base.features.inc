@@ -68,6 +68,76 @@ function snazzisweets_base_fontyourface_features_default_font() {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function snazzisweets_base_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: snazzi_fancybox_banner_item.
+  $styles['snazzi_fancybox_banner_item'] = array(
+    'label' => 'Fancybox Banner Item',
+    'effects' => array(
+      6 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 150,
+          'height' => 150,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  // Exported image style: snazzi_fancybox_expanded.
+  $styles['snazzi_fancybox_expanded'] = array(
+    'label' => 'Fancybox Expanded',
+    'effects' => array(
+      19 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 640,
+          'height' => 480,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: snazzi_homepage_banner_image.
+  $styles['snazzi_homepage_banner_image'] = array(
+    'label' => 'Homepage Banner Image',
+    'effects' => array(
+      16 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 300,
+          'height' => 300,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: snazzi_slick_small.
+  $styles['snazzi_slick_small'] = array(
+    'label' => 'Slick Small Image',
+    'effects' => array(
+      20 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 300,
+          'height' => 300,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+
+/**
  * Implements hook_node_info().
  */
 function snazzisweets_base_node_info() {
